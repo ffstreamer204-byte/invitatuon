@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+  display: flex;
+  justify-content: center;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px;
+}
+
+/* Card */
+.stall-card {
+  width: 100%;              /* MOBILE FIRST */
+  max-width: 320px;         /* limit size */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* 📱 Mobile (default) → 1 card */
+@media (min-width: 480px) {
+  .stall-card {
+    width: 90%;
+  }
+}
+
+/* 📱 Tablet → 2 cards */
+@media (min-width: 768px) {
+  .stall-card {
+    width: 45%;
+  }
+}
+
+/* 💻 Laptop → 3 cards */
+@media (min-width: 1024px) {
+  .stall-card {
+    width: 30%;
+  }
+}
+
+/* 🖥️ Large → 4 cards */
+@media (min-width: 1200px) {
+  .stall-card {
+    width: 22%;
+  }
+}
+.container{
+    margin: auto
+}
