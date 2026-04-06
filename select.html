@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BAZAAR-O-NOMICS 2K26</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:#111;
+  color:white;
+  text-align:center;
+}
+
+h1{
+  padding:15px;
+}
+
+/* department heading */
+.dept-title{
+  text-align:left;
+  padding:10px 20px;
+  font-size:18px;
+  font-weight:bold;
+  color:#ffd700;
+  position:center;
+}
+
+/* SAME GRID */
+.list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  padding:10px;
+}
+
+/* SAME CARD DESIGN */
+.card{
+  background:#222;
+  padding:20px;
+  border-radius:15px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.05);
+}
+
+.card img{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+}
+</style>
+</head>
+
+<body>
+
+<h1>BAZAAR-O-NOMICS 2K26</h1>
+
+<div id="container"></div>
+
+<script src="teachers.js"></script>
+
+<script>
+// group by department
+let groups = {};
+
+for(let id in teachers){
+  let dept = teachers[id].dept || "OTHER";
+
+  if(!groups[dept]){
+    groups[dept] = [];
+  }
+
+  groups[dept].push({id, ...teachers[id]});
+}
+
+const container = document.getElementById("container");
+
+// render UI
+for(let dept in groups){
+
+  // heading
+  let title = document.createElement("div");
+  title.className = "dept-title";
+  title.innerHTML = dept + " DEPARTMENT";
+  container.appendChild(title);
+
+  // grid
+  let grid = document.createElement("div");
+  grid.className = "list";
+
+  groups[dept].forEach(t => {
+
+    let div = document.createElement("div");
+    div.className = "card";
+
+    div.innerHTML = `
+      <img src="${t.photo}">
+      <p>${t.name}</p>
+    `;
+
+    div.onclick = function(){
+      window.location.href = "index.html?id=" + t.id;
+    }
+
+    grid.appendChild(div);
+  });
+
+  container.appendChild(grid);
+}
+</script>
+
+</body>
+</html>
