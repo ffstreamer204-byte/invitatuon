@@ -68,6 +68,7 @@ const teachers = {
   t47:{ name:"TEACHER<br>MR. AKSHIT SINGH BORA", photo:"images/t47.jpeg", dept:"MASS AND MEDIA" },
   t48:{ name:"TEACHER<br>MR. ASHUTOSH KUMAR", photo:"images/t48.jpeg", dept:"MASS AND MEDIA" },
 
-  t49:{ name:"DISCIPLINE HEAD<br>MR. KC SHARMA", photo:"images/t49.jpeg", dept:"ADMIN" }
+  //DISCIPLINE
+  t49:{ name:"DISCIPLINE HEAD<br>MR. KC SHARMA", photo:"images/t49.jpeg", dept:"DISCIPLINE" }
 
 };
